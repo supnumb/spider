@@ -1,0 +1,12 @@
+{
+  "name": "ticket_spider",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "debug": "~2.2.0",
+    "superagent": "3.0.0",
+	"cheerio":"~0.22.0",
+	"eventproxy":"~0.3.4",
+	"mysql":"~2.12.0"
+  }
+}

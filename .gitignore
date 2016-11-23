@@ -1,0 +1,12 @@
+#不需要git管理的文件列表
+
+
+/node_modules
+/bin
+
+
+
+#测试文件不需要提交
+t.js
+sup.js
+t?.js
