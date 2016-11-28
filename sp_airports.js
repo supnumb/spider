@@ -33,9 +33,8 @@ function download(url,callback){
 //var url = "http://www.likecha.com/tools/airport.html";
 //var url = "http://www.likecha.com/tools/airport.html?a=1&b=&c="
 
-function patch_download(a) {
+function patch_download(url,callback) {
 
-	var url = "http://www.likecha.com/tools/airport.html?a="+a+"&b=&c=";
 
 	download(url,function(data){
 
@@ -85,8 +84,9 @@ function patch_download(a) {
 	});
 }
 
-//patch_download(3);
 
-for(var i=40;i<50;i++) {
+
+for(var i=1;i<174;i++) {
+	var url = "http://www.likecha.com/tools/airport.html?a="+i+"&b=&c=";
 	patch_download(i);
 }	

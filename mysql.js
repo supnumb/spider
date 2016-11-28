@@ -39,7 +39,7 @@ var db ={
 
 			conn.query(sql,values,function(err,rows){
 				if (err) {
-					console.log(err);
+					console.log("QUERY  ==> " + err);
 				}
 				else {
 					callback(err,rows);
