@@ -15,13 +15,15 @@ module.exports = function(country){
 	 */
 	model.save = function(callback){
 		if(country) {
-
+			db.query("SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;",null,null);
 			db.query(sqlInsert,country,function(err,res){
 				if(err)
 					console.log(err);
 				else
 				{
 					country.ID = res.insertId;
+					console.log(res);
+					console.log(country);
 					callback(null,[country]);
 				}
 			});
@@ -44,7 +46,6 @@ module.exports = function(country){
 					_model.save(callback)
 				else 
 					callback("no record");
-
 			});
 		}
 		else if(country.CODE)

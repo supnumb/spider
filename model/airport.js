@@ -14,8 +14,10 @@ module.exports = function(airport){
 	 */
 	model.save = function(callback){
 		if(airport)
+		{
+			db.query("SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;",null,null);
 			db.query(sqlInsert,airport,callback);
-		else
+		}else
 			throw "no data!";
 	};
 

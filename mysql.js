@@ -41,7 +41,8 @@ var db ={
 				if (err) {
 					console.log("QUERY  ==> " + err);
 				}
-				else {
+				else if(callback) {
+
 					callback(err,rows);
 				}
 				conn.release();

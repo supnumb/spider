@@ -66,20 +66,19 @@ function download(url,callback){
 						return true;
 					}
 
-					{{{
-						var country ={
-							"CODE":$(this).find("td").eq(3).text(),
-							"COUNTRY":$(this).find("td").eq(4).text()
-						};
+					var country ={
+						"CODE":$(this).find("td").eq(3).text(),
+						"COUNTRY":$(this).find("td").eq(4).text()
+					};
 
-						var airport = {
-							"CODE":$(this).find("td").eq(0).text(),
-							"NAME":$(this).find("td").eq(2).text(),
-							"EN_NAME":$(this).find("td").eq(1).text(),
-							"LAT":$(this).find("td").eq(6).text(),
-							"LON":$(this).find("td").eq(7).text()
-						};
-					}}}
+					var airport = {
+						"CODE":$(this).find("td").eq(0).text(),
+						"NAME":$(this).find("td").eq(2).text(),
+						"EN_NAME":$(this).find("td").eq(1).text(),
+						"LAT":$(this).find("td").eq(6).text(),
+						"LON":$(this).find("td").eq(7).text()
+					};
+
 					//查到国家的ID并绑定到机场信息
 					countryModel(country).findByCode(country.CODE,function(err,row){
 						if(err)
@@ -108,7 +107,7 @@ function download(url,callback){
 
 var URLs = [];     //抓取网址
 
-for(var i=1;i<173;i++) {
+for(var i=172;i<174;i++) {
 	var url = "http://www.likecha.com/tools/airport.html?a=" + i + "&b=&c=";
 	URLs.push(url);
 }	
